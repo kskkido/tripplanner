@@ -34,8 +34,15 @@ app.use(bodyParser.json());
 app.use(morgan('dev'))
 
 app.use(express.static(path.join(__dirname, '/public')))
+app.use('/bootstrap', express.static(path.join(__dirname, '/node_modules/bootstrap/dist/')))
+// app.use('/bootstrap', function (req, res) {
+//   let extension = req.originalUrl.split('.').slice(-1).join('')
+//   console.log(extension)
+//   var localPath = path.join(__dirname, '/node_modules/bootstrap/dist', extension, 'bootstrap.min.'+extension)
+//   express.static(localPath)
+// })
 //routes
-app.use('/', routes)
+app.use('/jquery', express.static(path.join(__dirname, '/node_modules/jQuery/tmp/')))
 
 
 app.use(function(req, res, next) {
