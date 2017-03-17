@@ -1,1 +1,28 @@
-homepage
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Hellooooooo!</h1>
+<ul class="list-unstyled">
+    <!-- PLACEHOLDER LIST OF PAGES -->
+    Hotels:
+     <select>
+      {% for hotel in hotels %}
+       <option value = {{hotel.id}}>{{hotel.name}}</option>
+      {% endfor %}
+    </select>
+
+    Restaurants:
+     <select>
+      {% for restaurant in restaurants %}
+       <option value = {{restaurant.id}}>{{restaurant.name}}</option>
+      {% endfor %}
+    </select>
+
+    Activities:
+     <select>
+      {% for activity in activities %}
+       <option value = {{activity.id}}>{{activity.name}}</option>
+      {% endfor %}
+    </select>
+  </ul>
+{% endblock %}
